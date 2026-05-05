@@ -23,10 +23,13 @@
     <!-- Banner Inicial -->
     <section id="banner-home" class="banner">
         <div class="content">
+            <!-- Div corrigida para empilhar os itens verticalmente -->
             <div class="left">
                 <img src="img/cachorro-meme.jpg" alt="Isaac Israel" id="foto-principal">
-                <strong>Isaac Israel</strong>
-                <p>Técnico de informática, Hacker, Jogador "Professional" de Arena Breakout</p>
+                <div class="info-perfil">
+                    <strong>Isaac Israel</strong>
+                    <p>Técnico de informática, Hacker, Jogador "Professional" de Arena Breakout</p>
+                </div>
             </div>
             <div class="right">
                 <strong>Bio:</strong>
@@ -73,13 +76,11 @@
                 e.preventDefault();
                 const sectionTarget = link.getAttribute('data-section');
 
-                // Resetar links
                 links.forEach(l => {
                     l.classList.remove('active');
                     l.style.opacity = "0.6";
                 });
 
-                // Ativar link atual
                 link.classList.add('active');
                 link.style.opacity = "1";
 

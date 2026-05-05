@@ -69,23 +69,52 @@ nav ul {
     display: flex;
     gap: 4rem;
     max-width: 900px;
-    align-items: center;
+    align-items: flex-start; /* Alinha o topo da Bio com a foto */
 }
 
-.banner img {
+/* Esquerda: Imagem em cima, texto embaixo */
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza a imagem e o texto entre si */
+    text-align: center;
+    min-width: 250px;
+}
+
+.left img {
     width: 200px;
     border: 4px solid #4CC9F0;
     border-radius: 8px;
+    margin-bottom: 15px; /* Espaço para o nome não colar na foto */
 }
 
-/* Foto Flutuante - Tamanho Aumentado */
+.info-perfil strong {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Direita: Bio */
+.right {
+    flex: 1;
+    padding-top: 10px;
+}
+
+.right strong {
+    color: #4CC9F0;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Foto Flutuante */
 #foto-flutuante {
     position: fixed;
     left: 5%;
     top: 120px;
-    width: 180px;  /* Tamanho maior solicitado */
+    width: 180px;
     height: 180px;
-    border-radius: 15%; /* Estilo perfil zap */
+    border-radius: 15%;
     overflow: hidden;
     border: 5px solid #4CC9F0;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
@@ -135,8 +164,7 @@ h2 {
     margin-bottom: 2rem;
 }
 
-/* --- COMANDOS PARA ADAPTAR DISPOSITIVOS (Media Queries) --- */
-
+/* --- COMANDOS PARA ADAPTAR DISPOSITIVOS --- */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -154,7 +182,6 @@ h2 {
         gap: 2rem;
     }
 
-    /* Oculta a foto flutuante no celular para não atrapalhar a leitura */
     #foto-flutuante {
         display: none;
     }
