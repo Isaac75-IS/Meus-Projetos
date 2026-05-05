@@ -1,48 +1,107 @@
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isaac Israel | Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="nav">
+        <nav>
+            <h1>Isaac Israel / Mega</h1>
+            <ul id="menu">
+                <li><a href="#" class="nav-link active" data-section="home">Sobre Mim</a></li>
+                <li><a href="#" class="nav-link" data-section="projetos">Projetos</a></li>
+                <li><a href="#" class="nav-link" data-section="contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Raleway+Dots&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <!-- Banner Inicial -->
+    <section id="banner-home" class="banner">
+        <div class="content">
+            <div class="left">
+                <img src="img/cachorro-meme.jpg" alt="Isaac Israel" id="foto-principal">
+                <strong>Isaac Israel</strong>
+                <p>Técnico de informática, Hacker, Jogador "Professional" de Arena Breakout</p>
+            </div>
+            <div class="right">
+                <strong>Bio:</strong>
+                <p>Sou um estudante no ensino médio no IFPA integrado com o Técnico em informática, atualmente no último ano e faltando poucos meses para finalizar.</p>
+            </div>
+        </div>
+    </section>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Sobre Mim</title>
-  </head>
-  <body>
-<header class="nav">
-    <nav>
-        <h1>
-            Kayky Santos
-        </h1>
-        <ul>
-            <li>
-                <a href="">Sobre Mim</a>
-            </li>
-            <li>
-                <a href="">Projetos</a>
-            </li>
-            <li>
-                <a href="">Contato</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+    <!-- Foto Flutuante (Estilo Perfil) -->
+    <div id="foto-flutuante">
+        <img src="img/cachorro-meme.jpg" alt="Isaac Israel">
+    </div>
 
+    <!-- Conteúdo das Seções -->
+    <main id="main-content">
+        <section id="projetos" class="section">
+            <h2>Meus Projetos</h2>
+            <div class="card-projeto">
+                <p>Aqui vão aparecer meus projetos em breve...</p>
+            </div>
+        </section>
 
+        <section id="contato" class="section">
+            <h2>Contato</h2>
+            <div class="contato-container">
+                <p>Entre em contato comigo:</p>
+                <ul class="contato-lista">
+                    <li>📧 Email: seuemail@gmail.com</li>
+                    <li>📷 Instagram: @seuuser</li>
+                    <li>🐙 GitHub: github.com/seuuser</li>
+                </ul>
+            </div>
+        </section>
+    </main>
 
+    <script>
+        const links = document.querySelectorAll('.nav-link');
+        const bannerHome = document.getElementById('banner-home');
+        const fotoFlutuante = document.getElementById('foto-flutuante');
+        const sections = document.querySelectorAll('.section');
 
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionTarget = link.getAttribute('data-section');
 
+                // Resetar links
+                links.forEach(l => {
+                    l.classList.remove('active');
+                    l.style.opacity = "0.6";
+                });
 
-  </body>
+                // Ativar link atual
+                link.classList.add('active');
+                link.style.opacity = "1";
+
+                if (sectionTarget === 'home') {
+                    voltarParaHome();
+                } else {
+                    mostrarSecao(sectionTarget);
+                }
+            });
+        });
+
+        function mostrarSecao(id) {
+            bannerHome.style.display = 'none';
+            fotoFlutuante.classList.add('active');
+            sections.forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+
+        function voltarParaHome() {
+            bannerHome.style.display = 'flex';
+            fotoFlutuante.classList.remove('active');
+            sections.forEach(s => s.classList.remove('active'));
+        }
+    </script>
+</body>
 </html>
