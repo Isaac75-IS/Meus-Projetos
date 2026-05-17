@@ -191,3 +191,36 @@ h2 {
         padding: 2rem 1rem;
     }
 }
+
+.projeto-item {
+    background: #4b4b4bb0; /* Um tom escuro combinando com o tema RE */
+    border-left: 4px solid #cc0000; /* Vermelho Resident Evil */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.links-projeto a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #000000e3;
+    text-decoration: none;
+    background: #d66921;
+    padding: 5px 15px;
+    border-radius: 3px;
+    transition: background 0.3s;
+}
+
+.links-projeto a:hover {
+    background: #8a0b0b;
+}
+
+.aviso-construcao {
+    text-align: center;
+    padding: 20px;
+    background: #f0ad4e22; /* Um amarelo transparente de alerta */
+    border: 1px dashed #f0ad4e;
+    color: #f0ad4e;
+    font-style: italic;
+    margin-top: 30px;
+}
